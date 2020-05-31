@@ -1,0 +1,51 @@
+[System]
+Name='dicle'
+Type='sugeno'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=13
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='input1'
+Range=[-15 -5]
+NumMFs=3
+MF1='enalt':'trimf',[-14.9 -13.3 -10.99]
+MF2='ortaalt':'trimf',[-11.9 -10 -8.05555555555556]
+MF3='alt':'trimf',[-9.167 -7 -5]
+
+[Input2]
+Name='input2'
+Range=[-3 2]
+NumMFs=3
+MF1='alt':'trimf',[-3 -2.5 -1.6]
+MF2='orta':'trimf',[-2 -0.5 0.5]
+MF3='üst':'trimf',[0 1 1.9]
+
+[Output1]
+Name='output1'
+Range=[37.43 229.2]
+NumMFs=3
+MF1='alt':'linear',[-18 -6 0.05]
+MF2='orta':'linear',[-10 7 1]
+MF3='üst':'linear',[-15 -5 -0.05]
+
+[Rules]
+1 1, 3 (1) : 1
+1 2, 3 (1) : 1
+2 2, 3 (1) : 1
+2 2, 2 (1) : 1
+2 3, 2 (1) : 1
+3 3, 2 (1) : 1
+3 3, 1 (1) : 1
+1 3, 2 (1) : 1
+2 1, 3 (1) : 1
+2 1, 2 (1) : 1
+3 2, 2 (1) : 1
+3 3, 2 (1) : 1
+3 3, 1 (1) : 1
